@@ -139,6 +139,12 @@ function TodosComponent() {
         description: 'Learn Docker',
         done: false,
         targetDate: targetDate
+    },
+    {
+        id: 4,
+        description: 'Learn DSA',
+        done: false,
+        targetDate: targetDate
     }]
 
     return (
