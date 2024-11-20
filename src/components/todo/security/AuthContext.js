@@ -18,7 +18,7 @@ function AuthProvider({ children }) {
     //     setNumber(number + 1)
     // }, 10000);
 
-    const valueToShare = { number, isAuthenticated, submitLogin, doLogout }
+    const valueToShare = { isAuthenticated, submitLogin, doLogout }
     return (
         <AuthContext.Provider value={valueToShare}>
             {children}

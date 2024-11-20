@@ -5,7 +5,6 @@ function FooterComponent() {
     // const authContext = useContext(AuthContext);
     const authContext = useAuth()
 
-    console.log(`Footer: ${authContext.number}`);
     return (
         <footer className='footer'>
             <div className='container'>
