@@ -1,20 +1,19 @@
 import './TodoApp.css'
-import { BrowserRouter, Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LogoutComponent from './LogoutComponent';
 import FooterComponent from './FooterComponent';
 import HeaderComponent from './HeaderComponent';
-import TodosComponent from './TodoListComponent';
+import TodoListComponent from './TodoListComponent';
 import ErrorComponent from './ErrorComponent';
 import WelcomeComponent from './WelcomeComponent';
 import LoginComponent from './LoginComponent';
 
 import AuthProvider, { useAuth } from './security/AuthContext';
+import TodoComponent from './TodoComponent';
 
 
 function AuthenticatedRoute({ children }) {
     const authContext = useAuth()
-
-    const navigate = useNavigate()
 
     console.log('todoapp.jsx ' + authContext);
     if (authContext.isAuthenticated)
@@ -49,10 +48,17 @@ function TodoApp() {
 
                         <Route path='/todos' element={
                             <AuthenticatedRoute>
-                                <TodosComponent />
+                                <TodoListComponent />
                             </AuthenticatedRoute>
                         } />
 
+                        <Route path='/todo/:id'
+                            element={
+                                <AuthenticatedRoute>
+                                    <TodoComponent />
+                                </AuthenticatedRoute>
+                            }
+                        />
 
                         <Route path='/logout' element={
                             <AuthenticatedRoute>
