@@ -31,8 +31,8 @@ function LoginComponent() {
     }
 
 
-    function handleSubmit() {
-        if (authContext.submitLogin(username, password)) {
+    async function handleSubmit() {
+        if (await authContext.submitLogin(username, password)) {
             setShowSuccessComponent(true);
             setShowErrorComponent(false);
             // navigate('/welcome/' + username)
@@ -44,6 +44,7 @@ function LoginComponent() {
             navigate('/login')
         }
     }
+
 
     return (
         <div className="login">

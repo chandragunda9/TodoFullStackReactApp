@@ -2,12 +2,15 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { retrieveHelloWorldBean, retrieveHelloWorldPathVariable } from './api/HelloWorldApiService';
+import { useAuth } from './security/AuthContext';
 
 
 export default function WelcomeComponent() {
 
     const params = useParams()
     console.log(params);
+
+    const authContext = useAuth()
 
     const [message, setMessage] = useState(null)
 

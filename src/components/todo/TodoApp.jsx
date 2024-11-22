@@ -21,6 +21,15 @@ function AuthenticatedRoute({ children }) {
     return <Navigate to={'/login'} />
 }
 
+
+// function AuthenticatedRootUrl() {
+//     const authContext = useAuth()
+//     if (authContext.isAuthenticated) {
+//         return <Navigate to={`/welcome/${authContext.username}`} />
+//     }
+//     return <Navigate to={'/login'} />
+// }
+
 function TodoApp() {
     return (
         <div>
@@ -29,7 +38,8 @@ function TodoApp() {
                     <HeaderComponent />
                     <Routes>
                         <Route path='/' element={
-                            <LoginComponent />
+                            // <LoginComponent />
+                            <Navigate to={'/login'} />
                         } />
 
                         {/* <Route path='/' element={
