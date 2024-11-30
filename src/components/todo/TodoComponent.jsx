@@ -10,6 +10,8 @@ export default function TodoComponent() {
 
     const { id } = useParams()
 
+    console.log('id is ', id);
+
     const authContext = useAuth()
     const navigate = useNavigate()
 
@@ -33,7 +35,7 @@ export default function TodoComponent() {
 
 
     useEffect(
-        () => retrieveTodoDetails, [id]
+        () => retrieveTodoDetails(), [id]
     )
 
     function submitData(values) {
